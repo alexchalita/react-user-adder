@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, Fragment} from 'react';
 import AddUser from './components/Users/AddUser';
 import UsersList from './components/Users/UsersList';
 
@@ -14,11 +14,16 @@ function App() {
   }
 
   return (
-    <div>
+    <Fragment>
       <AddUser onAddUser={addUserHandler}/>
       <UsersList users={usersList}/>
-    </div>
+    </Fragment>
   );
 }
+
+// depending on the project structure and what depencies have been installed
+// instead of using <React.Fragment></React.Fragment> to wrap the adjacent
+// components, you can use < ></ > (this isn't valid JSX and might work on
+// all projects)
 
 export default App;
